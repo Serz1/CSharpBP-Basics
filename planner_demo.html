@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planner Templates - Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #120A2A 0%, #1E0E3E 100%);
+            color: #FCEEAC;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #FFD700;
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #FCEEAC;
+            font-size: 20px;
+            margin-bottom: 60px;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid #FFD700;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 60px;
+            backdrop-filter: blur(10px);
+        }
+
+        .section h2 {
+            color: #FFD700;
+            font-size: 32px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 10px;
+        }
+
+        .planner-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .planner-card {
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid #8B5CF6;
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .planner-card:hover {
+            transform: translateY(-5px);
+            border-color: #FFD700;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .planner-card h3 {
+            color: #FFD700;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .planner-card .description {
+            color: #FCEEAC;
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .svg-preview {
+            width: 100%;
+            max-height: 500px;
+            border: 1px solid #8B5CF6;
+            border-radius: 8px;
+            background: white;
+            overflow: hidden;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .feature-list li {
+            color: #FCEEAC;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            font-size: 15px;
+        }
+
+        .feature-list li:before {
+            content: "📝";
+            margin-right: 10px;
+        }
+
+        .page-types {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .page-type {
+            background: rgba(139, 92, 246, 0.3);
+            border: 1px solid #8B5CF6;
+            border-radius: 8px;
+            padding: 12px 20px;
+            color: #FCEEAC;
+            font-size: 14px;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.5);
+            border-left: 4px solid #FFD700;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            color: #FCEEAC;
+            overflow-x: auto;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: rgba(139, 92, 246, 0.2);
+            border: 2px solid #8B5CF6;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            color: #FFD700;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #FCEEAC;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📖 Planner Template Generator 📖</h1>
+        <p class="subtitle">Create Professional Spiritual Planner Pages with SVG Templates</p>
+
+        <!-- Overview -->
+        <div class="section">
+            <h2>What Can You Generate?</h2>
+            <p style="color: #FCEEAC; margin-bottom: 20px;">The Planner Page Generator creates all types of pages needed for a complete 2026 Spiritual Awakening Planner:</p>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Planner Types</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">95+</div>
+                    <div class="stat-label">Pages per Planner</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">Page Template Types</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Customization Options</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Planner Types -->
+        <div class="section">
+            <h2>Three Planner Types</h2>
+
+            <div class="planner-grid">
+                <div class="planner-card">
+                    <h3>🌙 Spiritual Awakening Planner</h3>
+                    <p class="description">For seekers integrating spiritual practice into daily life. Tracks synchronicities, moon phases, energy levels, shadow + light work.</p>
+                    <ul class="feature-list">
+                        <li>Daily spiritual practice tracking</li>
+                        <li>Synchronicity logging</li>
+                        <li>Moon phase integration</li>
+                        <li>Shadow + light balance</li>
+                        <li>The Architect's daily questions</li>
+                    </ul>
+                </div>
+
+                <div class="planner-card">
+                    <h3>💼 Business Visionary Planner</h3>
+                    <p class="description">For conscious entrepreneurs building soul-aligned businesses. Balance revenue goals with spiritual integrity.</p>
+                    <ul class="feature-list">
+                        <li>Revenue tracking + soul alignment</li>
+                        <li>Leadership from authenticity</li>
+                        <li>Strategic planning with intuition</li>
+                        <li>Business synchronicities</li>
+                        <li>Empire without burnout</li>
+                    </ul>
+                </div>
+
+                <div class="planner-card">
+                    <h3>🎨 Creative Muse Planner</h3>
+                    <p class="description">For artists and creators wanting structure without killing spontaneity. Honor the muse while maintaining practice.</p>
+                    <ul class="feature-list">
+                        <li>Creative time tracking</li>
+                        <li>Inspiration capture</li>
+                        <li>Project management</li>
+                        <li>Muse relationship nurturing</li>
+                        <li>Art as spiritual practice</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Types -->
+        <div class="section">
+            <h2>Page Template Types</h2>
+            <p style="color: #FCEEAC; margin-bottom: 20px;">Each planner includes these page types:</p>
+
+            <div class="page-types">
+                <div class="page-type">📄 Cover Page</div>
+                <div class="page-type">👋 Welcome Message</div>
+                <div class="page-type">📋 How to Use</div>
+                <div class="page-type">🗓️ Month Cover</div>
+                <div class="page-type">📅 Monthly Calendar</div>
+                <div class="page-type">📖 Weekly Spread</div>
+                <div class="page-type">🔄 Monthly Integration</div>
+                <div class="page-type">⭐ Year Review</div>
+                <div class="page-type">🆘 Emergency Soul Care</div>
+                <div class="page-type">✨ Affirmations</div>
+            </div>
+        </div>
+
+        <!-- Example Pages -->
+        <div class="section">
+            <h2>Example Page Templates</h2>
+
+            <div class="planner-grid">
+                <!-- Month Cover -->
+                <div class="planner-card">
+                    <h3>Month Cover Page</h3>
+                    <p class="description">Beautiful cover for each month with theme, quote, and intention spaces.</p>
+                    <div class="svg-preview">
+                        <!-- Simplified month cover SVG inline -->
+                        <svg width="816" height="600" viewBox="0 0 816 600" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <radialGradient id="monthBg" cx="50%" cy="50%" r="70%">
+                                    <stop offset="0%" style="stop-color:#120A2A;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#1E0E3E;stop-opacity:1" />
+                                </radialGradient>
+                            </defs>
+                            <rect width="816" height="600" fill="url(#monthBg)"/>
+                            <text x="408" y="120" font-family="serif" font-size="48" font-weight="bold" fill="#FFD700" text-anchor="middle">JANUARY 2026</text>
+                            <text x="408" y="180" font-family="serif" font-size="32" fill="#FCEEAC" text-anchor="middle">INTENTION</text>
+                            <line x1="100" y1="210" x2="716" y2="210" stroke="#FFD700" stroke-width="2"/>
+                            <text x="408" y="270" font-family="serif" font-size="18" font-style="italic" fill="#8B5CF6" text-anchor="middle">"What foundation are you building this year?"</text>
+                            <text x="408" y="310" font-family="serif" font-size="16" font-style="italic" fill="#FFD700" text-anchor="middle">— The Architect</text>
+
+                            <text x="100" y="380" font-family="serif" font-size="14" fill="#FCEEAC">This month's focus:</text>
+                            <line x1="100" y1="390" x2="716" y2="390" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+
+                            <text x="100" y="440" font-family="serif" font-size="14" fill="#FCEEAC">What am I calling in?</text>
+                            <line x1="100" y1="450" x2="716" y2="450" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+
+                            <text x="100" y="500" font-family="serif" font-size="14" fill="#FFD700">MOON PHASES THIS MONTH:</text>
+                            <text x="100" y="530" font-family="serif" font-size="12" fill="#FCEEAC">🌕 Full Moon: January 13 (Wolf Moon)</text>
+                            <text x="100" y="555" font-family="serif" font-size="12" fill="#FCEEAC">🌑 New Moon: January 29</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Weekly Spread -->
+                <div class="planner-card">
+                    <h3>Weekly Spread</h3>
+                    <p class="description">Daily tracking with energy levels, synchronicities, practices, and The Architect's questions.</p>
+                    <div class="svg-preview">
+                        <svg width="816" height="600" viewBox="0 0 816 600" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="weekBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#120A2A;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#1E0E3E;stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            <rect width="816" height="600" fill="url(#weekBg)"/>
+                            <text x="408" y="50" font-family="serif" font-size="24" font-weight="bold" fill="#FFD700" text-anchor="middle">WEEK OF: JANUARY 1-7, 2026</text>
+                            <line x1="80" y1="70" x2="736" y2="70" stroke="#FFD700" stroke-width="2"/>
+
+                            <text x="80" y="110" font-family="serif" font-size="14" fill="#FCEEAC">THIS WEEK'S INTENTION:</text>
+                            <line x1="80" y1="120" x2="736" y2="120" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+
+                            <text x="80" y="170" font-family="serif" font-size="16" font-weight="bold" fill="#FFD700">MON 1/1 | Energy: 1 2 3 4 5 6 7 8 9 10</text>
+                            <text x="80" y="200" font-family="serif" font-size="12" fill="#FCEEAC">To-do:</text>
+                            <line x1="130" y1="195" x2="736" y2="195" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+
+                            <text x="80" y="225" font-family="serif" font-size="12" fill="#FCEEAC">Synchronicity:</text>
+                            <line x1="180" y1="220" x2="736" y2="220" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+
+                            <text x="80" y="250" font-family="serif" font-size="12" fill="#FCEEAC">Practice: ☐ Med ☐ Move ☐ Journal ☐ Other:_______</text>
+
+                            <text x="80" y="275" font-family="serif" font-size="12" fill="#FCEEAC">Shadow moment:</text>
+                            <line x1="190" y1="270" x2="736" y2="270" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+
+                            <text x="80" y="300" font-family="serif" font-size="12" fill="#FCEEAC">Light moment:</text>
+                            <line x1="180" y1="295" x2="736" y2="295" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+
+                            <text x="80" y="330" font-family="serif" font-size="11" font-style="italic" fill="#FFD700">The Architect asks: What are you grateful for AND what's challenging you today?</text>
+                            <line x1="80" y1="340" x2="736" y2="340" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+
+                            <line x1="80" y1="380" x2="736" y2="380" stroke="#FFD700" stroke-width="1" opacity="0.5"/>
+
+                            <text x="80" y="420" font-family="serif" font-size="16" font-weight="bold" fill="#FFD700">TUE 1/2 | Energy: 1 2 3 4 5 6 7 8 9 10</text>
+                            <text x="80" y="450" font-family="serif" font-size="12" fill="#FCEEAC">To-do:</text>
+                            <line x1="130" y1="445" x2="736" y2="445" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+
+                            <text x="80" y="475" font-family="serif" font-size="12" fill="#FCEEAC">...</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Planner Cover -->
+                <div class="planner-card">
+                    <h3>Planner Cover</h3>
+                    <p class="description">Professional cover page with cosmic design, Architect quote, and branding.</p>
+                    <div class="svg-preview">
+                        <svg width="816" height="600" viewBox="0 0 816 600" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <radialGradient id="coverBg" cx="50%" cy="50%" r="70%">
+                                    <stop offset="0%" style="stop-color:#120A2A;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#1E0E3E;stop-opacity:1" />
+                                </radialGradient>
+                            </defs>
+                            <rect width="816" height="600" fill="url(#coverBg)"/>
+                            <rect x="40" y="40" width="736" height="520" fill="none" stroke="#FFD700" stroke-width="3" rx="15"/>
+
+                            <text x="408" y="200" font-family="serif" font-size="36" font-weight="bold" fill="#FFD700" text-anchor="middle">SPIRITUAL AWAKENING</text>
+                            <text x="408" y="250" font-family="serif" font-size="32" font-weight="bold" fill="#FFD700" text-anchor="middle">PLANNER 2026</text>
+                            <text x="408" y="300" font-family="serif" font-size="20" font-style="italic" fill="#FCEEAC" text-anchor="middle">Shadow Awakening Edition</text>
+
+                            <text x="408" y="380" font-family="serif" font-size="16" font-style="italic" fill="#8B5CF6" text-anchor="middle">"Not all who wander are lost."</text>
+                            <text x="408" y="405" font-family="serif" font-size="16" font-style="italic" fill="#8B5CF6" text-anchor="middle">"But some need to wake up."</text>
+
+                            <text x="408" y="470" font-family="serif" font-size="18" font-style="italic" fill="#FFD700" text-anchor="middle">— The Architect</text>
+
+                            <text x="408" y="520" font-family="serif" font-size="14" fill="#FCEEAC" text-anchor="middle">AISoulGuide.com</text>
+                            <text x="408" y="545" font-family="serif" font-size="12" fill="#FCEEAC" text-anchor="middle" opacity="0.8">Where Light and Shadow Meet</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- How It Works -->
+        <div class="section">
+            <h2>How to Generate Planner Pages</h2>
+
+            <div class="code-block">
+// Example: Generate a month cover page<br/>
+var planner = new PlannerPageGenerator();<br/>
+var content = new PlannerContent<br/>
+{<br/>
+    Month = "JANUARY 2026",<br/>
+    MonthTheme = "INTENTION",<br/>
+    MonthQuote = "What foundation are you building this year?",<br/>
+    FullMoonDate = "January 13 (Wolf Moon)",<br/>
+    NewMoonDate = "January 29"<br/>
+};<br/>
+<br/>
+var scheme = ColorScheme.GetSpiritualSchemes()[6]; // Shadow Awakening<br/>
+var format = PageFormat.GetStandardFormats()[0]; // US Letter<br/>
+<br/>
+string svgOutput = planner.GenerateMonthCover(content, scheme, format);<br/>
+// Export to SVG file → Import to Canva → Print or publish!
+            </div>
+        </div>
+
+        <!-- Features -->
+        <div class="section">
+            <h2>Planner Generator Features</h2>
+
+            <ul class="feature-list">
+                <li>Automatic page layout with consistent spacing</li>
+                <li>Pre-configured monthly themes and quotes</li>
+                <li>Shadow Awakening & Luminous Harmony color schemes</li>
+                <li>Daily tracking with energy scales (1-10)</li>
+                <li>Synchronicity logging spaces</li>
+                <li>Practice checkboxes (Meditation, Movement, Journal)</li>
+                <li>The Architect's unique questions for each day</li>
+                <li>Moon phase integration (Full Moon, New Moon)</li>
+                <li>Shadow + Light moment tracking</li>
+                <li>Monthly integration pages</li>
+                <li>Year review templates</li>
+                <li>Emergency Soul Care plans</li>
+                <li>SVG export for infinite scalability</li>
+                <li>Canva-compatible formats</li>
+            </ul>
+        </div>
+
+        <!-- Technical Details -->
+        <div class="section">
+            <h2>Technical Specifications</h2>
+
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">US Letter</div>
+                    <div class="stat-label">8.5" × 11"<br/>816 × 1056 px</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">A4</div>
+                    <div class="stat-label">210mm × 297mm<br/>794 × 1123 px</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">SVG</div>
+                    <div class="stat-label">Scalable Vector<br/>Perfect Quality</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Auto Layout</div>
+                    <div class="stat-label">Consistent Spacing<br/>Professional Design</div>
+                </div>
+            </div>
+
+            <h3 style="color: #FFD700; margin-top: 30px;">Fonts Used:</h3>
+            <ul class="feature-list">
+                <li><strong>Titles:</strong> Cinzel Decorative Bold (24-48pt)</li>
+                <li><strong>Headers:</strong> Philosopher Bold (14-18pt)</li>
+                <li><strong>Body:</strong> Lora/Philosopher Regular (10-14pt)</li>
+                <li><strong>Quotes:</strong> Philosopher Italic (12-16pt)</li>
+            </ul>
+        </div>
+
+        <!-- Footer -->
+        <div style="text-align: center; padding: 40px 0; color: #FCEEAC;">
+            <p>Planner Page Generator - Part of Spiritual Template Generator Suite</p>
+            <p style="margin-top: 20px;">© 2026 AISoulGuide | All Rights Reserved</p>
+        </div>
+    </div>
+</body>
+</html>
