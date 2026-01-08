@@ -17,8 +17,10 @@ namespace Acme.Wpf.ViewModels
     public class TemplateGeneratorViewModel : INotifyPropertyChanged
     {
         private readonly TemplateSvgGenerator _svgGenerator;
+        private readonly BatchExportService _batchExportService;
         private TemplateConfig _currentConfig;
         private string _previewSvg;
+        private string _previewHtml;
         private PageFormat _selectedPageFormat;
         private ColorScheme _selectedColorScheme;
         private FrameStyle _selectedFrameStyle;
@@ -29,6 +31,7 @@ namespace Acme.Wpf.ViewModels
         public TemplateGeneratorViewModel()
         {
             _svgGenerator = new TemplateSvgGenerator();
+            _batchExportService = new BatchExportService();
             _currentConfig = new TemplateConfig();
             _geometrySize = 200;
             _geometryOpacity = 0.3;
@@ -51,6 +54,9 @@ namespace Acme.Wpf.ViewModels
             AddGeometryCommand = new RelayCommand(AddGeometry);
             ClearGeometryCommand = new RelayCommand(ClearGeometry);
             ExportSvgCommand = new RelayCommand(ExportSvg);
+            BatchExportAllCommand = new RelayCommand(BatchExportAll);
+            BatchExportAngelCardsCommand = new RelayCommand(BatchExportAngelCards);
+            BatchExportPlannerCommand = new RelayCommand(BatchExportPlanner);
 
             // Generate initial preview
             GeneratePreview();
@@ -156,6 +162,20 @@ namespace Acme.Wpf.ViewModels
                 {
                     _previewSvg = value;
                     OnPropertyChanged();
+                    UpdatePreviewHtml();
+                }
+            }
+        }
+
+        public string PreviewHtml
+        {
+            get => _previewHtml;
+            set
+            {
+                if (_previewHtml != value)
+                {
+                    _previewHtml = value;
+                    OnPropertyChanged();
                 }
             }
         }
@@ -210,6 +230,9 @@ namespace Acme.Wpf.ViewModels
         public ICommand AddGeometryCommand { get; }
         public ICommand ClearGeometryCommand { get; }
         public ICommand ExportSvgCommand { get; }
+        public ICommand BatchExportAllCommand { get; }
+        public ICommand BatchExportAngelCardsCommand { get; }
+        public ICommand BatchExportPlannerCommand { get; }
 
         private void GeneratePreview()
         {
@@ -278,6 +301,150 @@ namespace Acme.Wpf.ViewModels
                     System.Windows.MessageBoxButton.OK,
                     System.Windows.MessageBoxImage.Error);
             }
+        }
+
+        private void BatchExportAll()
+        {
+            try
+            {
+                var folderDialog = new System.Windows.Forms.FolderBrowserDialog
+                {
+                    Description = "Select folder for complete collection export",
+                    ShowNewFolderButton = true
+                };
+
+                if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    var result = _batchExportService.ExportCompleteCollection(
+                        folderDialog.SelectedPath, SelectedColorScheme);
+
+                    System.Windows.MessageBox.Show(
+                        result.GetSummary(),
+                        "Batch Export Complete",
+                        System.Windows.MessageBoxButton.OK,
+                        System.Windows.MessageBoxImage.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(
+                    $"Error during batch export: {ex.Message}",
+                    "Export Error",
+                    System.Windows.MessageBoxButton.OK,
+                    System.Windows.MessageBoxImage.Error);
+            }
+        }
+
+        private void BatchExportAngelCards()
+        {
+            try
+            {
+                var folderDialog = new System.Windows.Forms.FolderBrowserDialog
+                {
+                    Description = "Select folder for Angel Cards export",
+                    ShowNewFolderButton = true
+                };
+
+                if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    int count = _batchExportService.ExportAllAngelCards(
+                        folderDialog.SelectedPath, SelectedColorScheme);
+
+                    count += _batchExportService.ExportAllBookSpreads(
+                        folderDialog.SelectedPath, SelectedColorScheme);
+
+                    count += _batchExportService.ExportQuickGuideCards(
+                        folderDialog.SelectedPath, SelectedColorScheme);
+
+                    System.Windows.MessageBox.Show(
+                        $"Successfully exported {count} Angel Card files!\n\n" +
+                        $"Location: {folderDialog.SelectedPath}",
+                        "Export Complete",
+                        System.Windows.MessageBoxButton.OK,
+                        System.Windows.MessageBoxImage.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(
+                    $"Error exporting Angel Cards: {ex.Message}",
+                    "Export Error",
+                    System.Windows.MessageBoxButton.OK,
+                    System.Windows.MessageBoxImage.Error);
+            }
+        }
+
+        private void BatchExportPlanner()
+        {
+            try
+            {
+                var folderDialog = new System.Windows.Forms.FolderBrowserDialog
+                {
+                    Description = "Select folder for Planner export",
+                    ShowNewFolderButton = true
+                };
+
+                if (folderDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    int count = _batchExportService.ExportAllPlannerMonths(
+                        folderDialog.SelectedPath, SelectedColorScheme);
+
+                    count += _batchExportService.ExportSampleJournalPages(
+                        folderDialog.SelectedPath, SelectedColorScheme, 20);
+
+                    System.Windows.MessageBox.Show(
+                        $"Successfully exported {count} Planner files!\n\n" +
+                        $"Location: {folderDialog.SelectedPath}",
+                        "Export Complete",
+                        System.Windows.MessageBoxButton.OK,
+                        System.Windows.MessageBoxImage.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show(
+                    $"Error exporting Planner: {ex.Message}",
+                    "Export Error",
+                    System.Windows.MessageBoxButton.OK,
+                    System.Windows.MessageBoxImage.Error);
+            }
+        }
+
+        private void UpdatePreviewHtml()
+        {
+            if (string.IsNullOrEmpty(_previewSvg))
+            {
+                PreviewHtml = "<html><body><p>No preview available</p></body></html>";
+                return;
+            }
+
+            PreviewHtml = $@"
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=""UTF-8"">
+    <title>SVG Preview</title>
+    <style>
+        body {{
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #1a1a1a;
+        }}
+        svg {{
+            max-width: 100%;
+            max-height: 90vh;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }}
+    </style>
+</head>
+<body>
+    {_previewSvg}
+</body>
+</html>";
         }
 
         #endregion

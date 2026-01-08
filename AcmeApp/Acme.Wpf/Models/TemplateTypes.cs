@@ -105,6 +105,70 @@ namespace Acme.Wpf.Models
                 },
                 new AngelNumberContent
                 {
+                    Number = "333",
+                    Title = "ASCENDED MASTERS PRESENT",
+                    Emoji = "👁️",
+                    SoulMeaning = "Your spiritual team (guides, ancestors, ascended masters) is ACTIVELY working on your behalf. You are protected, guided, and SEEN.",
+                    PracticalSteps = new[]
+                    {
+                        "ASK FOR HELP - Speak request aloud or write it down",
+                        "WATCH FOR SIGNS - Guides communicate through synchronicity",
+                        "CREATE RITUAL - Light candle, speak gratitude to your team",
+                        "TRUST INTUITIVE HITS - First thought = divine download",
+                        "AMPLIFY CREATIVE EXPRESSION - Sing, write, paint, dance NOW"
+                    },
+                    Affirmation = "I am surrounded by divine beings who love and support me. I trust their guidance completely."
+                },
+                new AngelNumberContent
+                {
+                    Number = "444",
+                    Title = "FOUNDATION SOLIDIFYING",
+                    Emoji = "🏛️",
+                    SoulMeaning = "You are building something REAL that will last. This is the GRIND phase. Unsexy, unglamorous, absolutely essential.",
+                    PracticalSteps = new[]
+                    {
+                        "RETURN TO BASICS - Systems, routines, discipline",
+                        "STRENGTHEN FOUNDATION - Health, finances, relationships",
+                        "ELIMINATE DISTRACTIONS - What's not essential? Cut it.",
+                        "TRUST THE PROCESS - Slow progress is STILL progress",
+                        "ASK: 'Will this matter in 5 years?' - If yes, prioritize it"
+                    },
+                    Affirmation = "I am building a solid foundation for my highest life. Every small step matters."
+                },
+                new AngelNumberContent
+                {
+                    Number = "555",
+                    Title = "MAJOR TRANSFORMATION INCOMING",
+                    Emoji = "🌀",
+                    SoulMeaning = "The old version of your life is DISSOLVING. Uncomfortable? Yes. Necessary? ABSOLUTELY. You're being upgraded.",
+                    PracticalSteps = new[]
+                    {
+                        "EMBRACE THE CHAOS - Resistance makes it harder",
+                        "RELEASE WHAT'S LEAVING - Job, person, belief, habit",
+                        "SAY YES TO THE NEW - Even if you don't feel ready",
+                        "MOVE YOUR BODY - Walk, dance, shake to process energy",
+                        "REPEAT: 'I trust the transformation. I am safe in change.'"
+                    },
+                    Affirmation = "I release the old with gratitude and welcome the new with excitement. Change is my ally."
+                },
+                new AngelNumberContent
+                {
+                    Number = "666",
+                    Title = "EARTH INTEGRATION REQUIRED",
+                    Emoji = "🌍",
+                    SoulMeaning = "You've been too much in your HEAD or the SPIRITUAL realm. Come back to BODY. Come back to EARTH. Balance is needed NOW.",
+                    PracticalSteps = new[]
+                    {
+                        "GET PHYSICAL - Exercise, intimacy, nature walk TODAY",
+                        "HANDLE PRACTICAL MATTERS - Bills, emails, appointments",
+                        "NOURISH YOUR BODY - Real food, water, rest",
+                        "GROUND YOUR ENERGY - Bare feet on earth for 10 minutes",
+                        "CHECK FINANCES - Money is spiritual. Balance your accounts."
+                    },
+                    Affirmation = "I honor my human experience. My body is sacred. The material world is my playground."
+                },
+                new AngelNumberContent
+                {
                     Number = "777",
                     Title = "DIVINE JACKPOT",
                     Emoji = "🎯",
@@ -118,6 +182,38 @@ namespace Acme.Wpf.Models
                         "EXPECT MIRACLES - Set expectation: 'Miracles are my new normal'"
                     },
                     Affirmation = "I am in perfect alignment with my highest path. Divine favor flows through every area of my life."
+                },
+                new AngelNumberContent
+                {
+                    Number = "888",
+                    Title = "ABUNDANCE OVERFLOW",
+                    Emoji = "💰",
+                    SoulMeaning = "You are entering a cycle of MASSIVE ABUNDANCE. Financial, emotional, relational, creative—it's ALL coming. Open your hands to RECEIVE.",
+                    PracticalSteps = new[]
+                    {
+                        "DECLARE: 'I am ready to receive' - Say it aloud daily",
+                        "CLEAR BLOCKS TO RECEIVING - Where do you deflect compliments/money/help?",
+                        "GIVE GENEROUSLY - Tip extra, donate, share resources",
+                        "UPGRADE ONE THING - Buy the nicer version (signals worthiness)",
+                        "EXPECT UNEXPECTED MONEY - Check for refunds, rebates, forgotten accounts"
+                    },
+                    Affirmation = "Abundance is my natural state. I receive easily and joyfully from expected and unexpected sources."
+                },
+                new AngelNumberContent
+                {
+                    Number = "999",
+                    Title = "COMPLETION & RELEASE",
+                    Emoji = "🔚",
+                    SoulMeaning = "A major life chapter is COMPLETE. Grief is appropriate. Honor what was. Then RELEASE IT to make space for what's coming.",
+                    PracticalSteps = new[]
+                    {
+                        "RITUAL CLOSURE - Write goodbye letter, burn it, release it",
+                        "FEEL YOUR FEELINGS - Cry, rage, laugh—all of it is valid",
+                        "CLEAN HOUSE LITERALLY - Donate, delete, declutter",
+                        "COMPLETE UNFINISHED BUSINESS - Have the conversation, send the email",
+                        "DECLARE: 'I am complete with this chapter. I am ready for the new.'"
+                    },
+                    Affirmation = "I release the old with love and gratitude. I am complete. I am ready. The new is coming."
                 }
             };
         }
