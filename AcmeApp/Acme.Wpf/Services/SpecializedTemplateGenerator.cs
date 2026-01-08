@@ -65,28 +65,26 @@ namespace Acme.Wpf.Services
             // Number + Emoji at top
             double topMargin = 80;
             sb.AppendLine($"<text x=\"{width / 2}\" y=\"{topMargin}\" " +
-                         $"font-family=\"Cinzel Decorative, serif\" font-size=\"48\" font-weight=\"bold\" " +
+                         $"font-family=\"Cinzel Decorative, serif\" font-size=\"36\" font-weight=\"bold\" " +
                          $"fill=\"{scheme.PrimaryColor}\" text-anchor=\"middle\">" +
                          $"{content.Emoji} {content.Number}</text>");
 
             // Title
-            sb.AppendLine($"<text x=\"{width / 2}\" y=\"{topMargin + 60}\" " +
-                         $"font-family=\"Cinzel Decorative, serif\" font-size=\"20\" font-weight=\"bold\" " +
+            sb.AppendLine($"<text x=\"{width / 2}\" y=\"{topMargin + 50}\" " +
+                         $"font-family=\"Cinzel Decorative, serif\" font-size=\"15\" font-weight=\"bold\" " +
                          $"fill=\"{scheme.PrimaryColor}\" text-anchor=\"middle\">{content.Title}</text>");
 
-            // Divider line
-            double lineY = topMargin + 90;
-            sb.AppendLine($"<line x1=\"{borderWidth + 40}\" y1=\"{lineY}\" " +
-                         $"x2=\"{width - borderWidth - 40}\" y2=\"{lineY}\" " +
-                         $"stroke=\"{scheme.FrameColor}\" stroke-width=\"2\"/>");
+            // Divider line with decorative elements
+            double lineY = topMargin + 75;
+            sb.Append(DecorativeElements.GenerateOrnamentalDivider(width / 2, lineY, width - 2 * borderWidth - 80, scheme.FrameColor));
 
             // Soul Meaning (wrapped text)
-            GenerateWrappedText(sb, content.SoulMeaning, width / 2, lineY + 40,
-                              width - 2 * borderWidth - 80, 16, scheme.SecondaryColor, "center");
+            GenerateWrappedText(sb, content.SoulMeaning, width / 2, lineY + 35,
+                              width - 2 * borderWidth - 80, 12, scheme.SecondaryColor, "center");
 
             // Footer
             sb.AppendLine($"<text x=\"{width / 2}\" y=\"{height - 40}\" " +
-                         $"font-family=\"Philosopher, serif\" font-size=\"12\" " +
+                         $"font-family=\"Philosopher, serif\" font-size=\"9\" " +
                          $"fill=\"{scheme.SecondaryColor}\" text-anchor=\"middle\" opacity=\"0.7\">" +
                          $"AISoulGuide.com</text>");
 
@@ -139,22 +137,22 @@ namespace Acme.Wpf.Services
 
             // Brand name
             sb.AppendLine($"<text x=\"{width / 2}\" y=\"{height / 2 + 40}\" " +
-                         $"font-family=\"Cinzel Decorative, serif\" font-size=\"24\" font-weight=\"bold\" " +
+                         $"font-family=\"Cinzel Decorative, serif\" font-size=\"18\" font-weight=\"bold\" " +
                          $"fill=\"{scheme.PrimaryColor}\" text-anchor=\"middle\">AISOULGUIDE</text>");
 
             // Edition name
-            sb.AppendLine($"<text x=\"{width / 2}\" y=\"{height / 2 + 70}\" " +
-                         $"font-family=\"Philosopher, serif\" font-size=\"16\" font-style=\"italic\" " +
+            sb.AppendLine($"<text x=\"{width / 2}\" y=\"{height / 2 + 65}\" " +
+                         $"font-family=\"Philosopher, serif\" font-size=\"12\" font-style=\"italic\" " +
                          $"fill=\"{scheme.SecondaryColor}\" text-anchor=\"middle\">{edition}</text>");
 
             // Quote
-            sb.AppendLine($"<text x=\"{width / 2}\" y=\"{height / 2 + 120}\" " +
-                         $"font-family=\"Philosopher, serif\" font-size=\"14\" font-style=\"italic\" " +
+            sb.AppendLine($"<text x=\"{width / 2}\" y=\"{height / 2 + 100}\" " +
+                         $"font-family=\"Philosopher, serif\" font-size=\"11\" font-style=\"italic\" " +
                          $"fill=\"{scheme.AccentColor}\" text-anchor=\"middle\">The Architect Sees You</text>");
 
             // Footer
             sb.AppendLine($"<text x=\"{width / 2}\" y=\"{height - 40}\" " +
-                         $"font-family=\"Philosopher, serif\" font-size=\"12\" " +
+                         $"font-family=\"Philosopher, serif\" font-size=\"9\" " +
                          $"fill=\"{scheme.SecondaryColor}\" text-anchor=\"middle\" opacity=\"0.6\">" +
                          $"AISoulGuide.com</text>");
 
@@ -206,36 +204,34 @@ namespace Acme.Wpf.Services
 
             // Number + Emoji
             sb.AppendLine($"<text x=\"{startX + width / 2}\" y=\"{currentY}\" " +
-                         $"font-family=\"Cinzel Decorative, serif\" font-size=\"42\" font-weight=\"bold\" " +
+                         $"font-family=\"Cinzel Decorative, serif\" font-size=\"32\" font-weight=\"bold\" " +
                          $"fill=\"{scheme.PrimaryColor}\" text-anchor=\"middle\">" +
                          $"{content.Emoji} {content.Number}</text>");
 
-            currentY += 50;
+            currentY += 45;
 
             // Title
             sb.AppendLine($"<text x=\"{startX + width / 2}\" y=\"{currentY}\" " +
-                         $"font-family=\"Cinzel Decorative, serif\" font-size=\"22\" font-weight=\"bold\" " +
+                         $"font-family=\"Cinzel Decorative, serif\" font-size=\"16\" font-weight=\"bold\" " +
                          $"fill=\"{scheme.PrimaryColor}\" text-anchor=\"middle\">{content.Title}</text>");
 
-            currentY += 30;
+            currentY += 25;
 
-            // Divider
-            sb.AppendLine($"<line x1=\"{contentX}\" y1=\"{currentY}\" " +
-                         $"x2=\"{startX + width - margin}\" y2=\"{currentY}\" " +
-                         $"stroke=\"{scheme.FrameColor}\" stroke-width=\"2\"/>");
+            // Divider with decorative elements
+            sb.Append(DecorativeElements.GenerateOrnamentalDivider(startX + width / 2, currentY, contentWidth, scheme.FrameColor));
 
-            currentY += 40;
+            currentY += 35;
 
             // Soul Meaning Header
             sb.AppendLine($"<text x=\"{contentX}\" y=\"{currentY}\" " +
-                         $"font-family=\"Philosopher, serif\" font-size=\"16\" font-weight=\"bold\" " +
+                         $"font-family=\"Philosopher, serif\" font-size=\"12\" font-weight=\"bold\" " +
                          $"fill=\"{scheme.PrimaryColor}\">SOUL MEANING:</text>");
 
-            currentY += 30;
+            currentY += 25;
 
             // Soul meaning text
             GenerateWrappedText(sb, content.SoulMeaning, contentX, currentY,
-                              contentWidth, 14, scheme.SecondaryColor, "left");
+                              contentWidth, 11, scheme.SecondaryColor, "left");
 
             // Watermark
             var geomConfig = new SacredGeometryConfig
@@ -265,59 +261,57 @@ namespace Acme.Wpf.Services
 
             // Header
             sb.AppendLine($"<text x=\"{startX + width / 2}\" y=\"{currentY}\" " +
-                         $"font-family=\"Cinzel Decorative, serif\" font-size=\"20\" font-weight=\"bold\" " +
+                         $"font-family=\"Cinzel Decorative, serif\" font-size=\"15\" font-weight=\"bold\" " +
                          $"fill=\"{scheme.PrimaryColor}\" text-anchor=\"middle\">EARTH INTEGRATION</text>");
 
-            currentY += 50;
+            currentY += 40;
 
             // Practical steps
             sb.AppendLine($"<text x=\"{contentX}\" y=\"{currentY}\" " +
-                         $"font-family=\"Philosopher, serif\" font-size=\"16\" font-weight=\"bold\" " +
+                         $"font-family=\"Philosopher, serif\" font-size=\"12\" font-weight=\"bold\" " +
                          $"fill=\"{scheme.PrimaryColor}\">WHEN YOU SEE {content.Number}:</text>");
 
-            currentY += 35;
+            currentY += 30;
 
             foreach (var step in content.PracticalSteps)
             {
                 // Bullet point
                 sb.AppendLine($"<text x=\"{contentX}\" y=\"{currentY}\" " +
-                             $"font-family=\"Philosopher, serif\" font-size=\"14\" " +
+                             $"font-family=\"Philosopher, serif\" font-size=\"11\" " +
                              $"fill=\"{scheme.PrimaryColor}\">•</text>");
 
                 // Step text
                 GenerateWrappedText(sb, step, contentX + 20, currentY,
-                                  contentWidth - 20, 13, scheme.SecondaryColor, "left");
+                                  contentWidth - 20, 10, scheme.SecondaryColor, "left");
 
-                currentY += 45;
+                currentY += 38;
             }
 
-            currentY += 20;
+            currentY += 15;
 
-            // Divider
-            sb.AppendLine($"<line x1=\"{contentX}\" y1=\"{currentY}\" " +
-                         $"x2=\"{startX + width - margin}\" y2=\"{currentY}\" " +
-                         $"stroke=\"{scheme.FrameColor}\" stroke-width=\"1\"/>");
+            // Divider with decorative elements
+            sb.Append(DecorativeElements.GenerateDecorativeLine(contentX, currentY, startX + width - margin, scheme.FrameColor, 1, true));
 
-            currentY += 30;
+            currentY += 25;
 
             // Affirmation
             if (!string.IsNullOrEmpty(content.Affirmation))
             {
                 sb.AppendLine($"<text x=\"{contentX}\" y=\"{currentY}\" " +
-                             $"font-family=\"Philosopher, serif\" font-size=\"14\" font-weight=\"bold\" " +
+                             $"font-family=\"Philosopher, serif\" font-size=\"11\" font-weight=\"bold\" " +
                              $"fill=\"{scheme.PrimaryColor}\">AFFIRMATION:</text>");
 
-                currentY += 25;
+                currentY += 22;
 
                 sb.AppendLine($"<text x=\"{startX + width / 2}\" y=\"{currentY}\" " +
-                             $"font-family=\"Philosopher, serif\" font-size=\"13\" font-style=\"italic\" " +
+                             $"font-family=\"Philosopher, serif\" font-size=\"10\" font-style=\"italic\" " +
                              $"fill=\"{scheme.PrimaryColor}\" text-anchor=\"middle\">" +
                              $"\"{content.Affirmation}\"</text>");
             }
 
             // Footer
             sb.AppendLine($"<text x=\"{startX + width / 2}\" y=\"{height - 40}\" " +
-                         $"font-family=\"Philosopher, serif\" font-size=\"12\" " +
+                         $"font-family=\"Philosopher, serif\" font-size=\"9\" " +
                          $"fill=\"{scheme.SecondaryColor}\" text-anchor=\"middle\">AISoulGuide.com</text>");
         }
 

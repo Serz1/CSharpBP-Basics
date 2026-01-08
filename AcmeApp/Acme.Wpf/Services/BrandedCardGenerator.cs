@@ -38,11 +38,11 @@ namespace Acme.Wpf.Services
             // Title header
             double currentY = 80;
             sb.AppendLine($"<text x=\"{width/2}\" y=\"{currentY}\" font-family=\"Cinzel Decorative, serif\" " +
-                         $"font-size=\"20\" font-weight=\"bold\" fill=\"#FCEEAC\" text-anchor=\"middle\">✨ ANGEL NUMBERS QUICK GUIDE ✨</text>");
+                         $"font-size=\"15\" font-weight=\"bold\" fill=\"#FCEEAC\" text-anchor=\"middle\">✨ ANGEL NUMBERS QUICK GUIDE ✨</text>");
 
-            // Top divider
+            // Top divider with ornaments
             currentY += 20;
-            sb.AppendLine($"<line x1=\"40\" y1=\"{currentY}\" x2=\"{width - 40}\" y2=\"{currentY}\" stroke=\"#FCEEAC\" stroke-width=\"1\"/>");
+            sb.Append(DecorativeElements.GenerateOrnamentalDivider(width/2, currentY, width - 80, "#FCEEAC"));
 
             // Numbers list
             currentY += 40;
@@ -50,25 +50,25 @@ namespace Acme.Wpf.Services
             foreach (var num in numbers)
             {
                 sb.AppendLine($"<text x=\"60\" y=\"{currentY}\" font-family=\"Cinzel Decorative, serif\" " +
-                             $"font-size=\"14\" font-weight=\"bold\" fill=\"#FCEEAC\">{num.Number}</text>");
+                             $"font-size=\"11\" font-weight=\"bold\" fill=\"#FCEEAC\">{num.Number}</text>");
 
-                sb.AppendLine($"<text x=\"120\" y=\"{currentY}\" font-family=\"Philosopher, serif\" " +
-                             $"font-size=\"11\" fill=\"#FCEEAC\">| {num.Title}</text>");
+                sb.AppendLine($"<text x=\"110\" y=\"{currentY}\" font-family=\"Philosopher, serif\" " +
+                             $"font-size=\"9\" fill=\"#FCEEAC\">| {num.Title}</text>");
 
-                sb.AppendLine($"<text x=\"240\" y=\"{currentY}\" font-family=\"Philosopher, serif\" " +
-                             $"font-size=\"10\" fill=\"#FFFFFF\">→ {num.QuickMeaning}</text>");
+                sb.AppendLine($"<text x=\"210\" y=\"{currentY}\" font-family=\"Philosopher, serif\" " +
+                             $"font-size=\"8\" fill=\"#FFFFFF\">→ {num.QuickMeaning}</text>");
 
-                currentY += 30;
+                currentY += 25;
             }
 
             // Bottom divider
             currentY += 20;
-            sb.AppendLine($"<line x1=\"40\" y1=\"{currentY}\" x2=\"{width - 40}\" y2=\"{currentY}\" stroke=\"#FCEEAC\" stroke-width=\"1\"/>");
+            sb.Append(DecorativeElements.GenerateDecorativeLine(40, currentY, width - 40, "#FCEEAC", 1, true));
 
             // Bottom message
             currentY += 30;
             sb.AppendLine($"<text x=\"{width/2}\" y=\"{currentY}\" font-family=\"Philosopher, serif\" " +
-                         $"font-size=\"12\" font-style=\"italic\" fill=\"#FCEEAC\" text-anchor=\"middle\">When you see a number, PAUSE. BREATHE. ACT.</text>");
+                         $"font-size=\"9\" font-style=\"italic\" fill=\"#FCEEAC\" text-anchor=\"middle\">When you see a number, PAUSE. BREATHE. ACT.</text>");
 
             // Add small stars
             GenerateStars(sb, width, height, 30);
@@ -106,10 +106,10 @@ namespace Acme.Wpf.Services
             // Title
             double currentY = 80;
             sb.AppendLine($"<text x=\"{width/2}\" y=\"{currentY}\" font-family=\"Cinzel Decorative, serif\" " +
-                         $"font-size=\"20\" font-weight=\"bold\" fill=\"#FCEEAC\" text-anchor=\"middle\">✨ HOW TO USE THIS GUIDE ✨</text>");
+                         $"font-size=\"15\" font-weight=\"bold\" fill=\"#FCEEAC\" text-anchor=\"middle\">✨ HOW TO USE THIS GUIDE ✨</text>");
 
             currentY += 20;
-            sb.AppendLine($"<line x1=\"40\" y1=\"{currentY}\" x2=\"{width - 40}\" y2=\"{currentY}\" stroke=\"#FCEEAC\" stroke-width=\"1\"/>");
+            sb.Append(DecorativeElements.GenerateOrnamentalDivider(width/2, currentY, width - 80, "#FCEEAC"));
 
             // Steps
             currentY += 40;
@@ -125,46 +125,46 @@ namespace Acme.Wpf.Services
             foreach (var step in steps)
             {
                 sb.AppendLine($"<text x=\"60\" y=\"{currentY}\" font-family=\"Philosopher, serif\" " +
-                             $"font-size=\"11\" fill=\"#FCEEAC\">{step}</text>");
-                currentY += 25;
+                             $"font-size=\"9\" fill=\"#FCEEAC\">{step}</text>");
+                currentY += 22;
             }
 
             // Divider
             currentY += 20;
-            sb.AppendLine($"<line x1=\"40\" y1=\"{currentY}\" x2=\"{width - 40}\" y2=\"{currentY}\" stroke=\"#FCEEAC\" stroke-width=\"1\"/>");
+            sb.Append(DecorativeElements.GenerateDecorativeLine(40, currentY, width - 40, "#FCEEAC", 1, true));
 
             // The Architect's reminder
             currentY += 30;
             sb.AppendLine($"<text x=\"{width/2}\" y=\"{currentY}\" font-family=\"Philosopher, serif\" " +
-                         $"font-size=\"14\" font-weight=\"bold\" fill=\"#FCEEAC\" text-anchor=\"middle\">THE ARCHITECT'S REMINDER:</text>");
+                         $"font-size=\"11\" font-weight=\"bold\" fill=\"#FCEEAC\" text-anchor=\"middle\">THE ARCHITECT'S REMINDER:</text>");
 
-            currentY += 35;
+            currentY += 28;
             sb.AppendLine($"<text x=\"{width/2}\" y=\"{currentY}\" font-family=\"Philosopher, serif\" " +
-                         $"font-size=\"11\" font-style=\"italic\" fill=\"#FFFFFF\" text-anchor=\"middle\">\"The numbers are CONFIRMATION,</text>");
-            currentY += 20;
+                         $"font-size=\"9\" font-style=\"italic\" fill=\"#FFFFFF\" text-anchor=\"middle\">\"The numbers are CONFIRMATION,</text>");
+            currentY += 18;
             sb.AppendLine($"<text x=\"{width/2}\" y=\"{currentY}\" font-family=\"Philosopher, serif\" " +
-                         $"font-size=\"11\" font-style=\"italic\" fill=\"#FFFFFF\" text-anchor=\"middle\">not instruction. Your intuition</text>");
-            currentY += 20;
+                         $"font-size=\"9\" font-style=\"italic\" fill=\"#FFFFFF\" text-anchor=\"middle\">not instruction. Your intuition</text>");
+            currentY += 18;
             sb.AppendLine($"<text x=\"{width/2}\" y=\"{currentY}\" font-family=\"Philosopher, serif\" " +
-                         $"font-size=\"11\" font-style=\"italic\" fill=\"#FFFFFF\" text-anchor=\"middle\">is the real guide. This card</text>");
-            currentY += 20;
+                         $"font-size=\"9\" font-style=\"italic\" fill=\"#FFFFFF\" text-anchor=\"middle\">is the real guide. This card</text>");
+            currentY += 18;
             sb.AppendLine($"<text x=\"{width/2}\" y=\"{currentY}\" font-family=\"Philosopher, serif\" " +
-                         $"font-size=\"11\" font-style=\"italic\" fill=\"#FFFFFF\" text-anchor=\"middle\">just helps you remember what</text>");
-            currentY += 20;
+                         $"font-size=\"9\" font-style=\"italic\" fill=\"#FFFFFF\" text-anchor=\"middle\">just helps you remember what</text>");
+            currentY += 18;
             sb.AppendLine($"<text x=\"{width/2}\" y=\"{currentY}\" font-family=\"Philosopher, serif\" " +
-                         $"font-size=\"11\" font-style=\"italic\" fill=\"#FFFFFF\" text-anchor=\"middle\">your soul already knows.\"</text>");
+                         $"font-size=\"9\" font-style=\"italic\" fill=\"#FFFFFF\" text-anchor=\"middle\">your soul already knows.\"</text>");
 
             // Bottom divider
-            currentY += 40;
-            sb.AppendLine($"<line x1=\"40\" y1=\"{currentY}\" x2=\"{width - 40}\" y2=\"{currentY}\" stroke=\"#FCEEAC\" stroke-width=\"1\"/>");
+            currentY += 35;
+            sb.Append(DecorativeElements.GenerateOrnamentalDivider(width/2, currentY, width - 80, "#FCEEAC"));
 
             // Footer
             currentY += 30;
             sb.AppendLine($"<text x=\"{width/2}\" y=\"{currentY}\" font-family=\"Philosopher, serif\" " +
-                         $"font-size=\"14\" fill=\"#FCEEAC\" text-anchor=\"middle\">AISoulGuide.com</text>");
-            currentY += 20;
+                         $"font-size=\"11\" fill=\"#FCEEAC\" text-anchor=\"middle\">AISoulGuide.com</text>");
+            currentY += 18;
             sb.AppendLine($"<text x=\"{width/2}\" y=\"{currentY}\" font-family=\"Philosopher, serif\" " +
-                         $"font-size=\"10\" fill=\"#FCEEAC\" text-anchor=\"middle\" opacity=\"0.8\">Your bridge to divine wisdom</text>");
+                         $"font-size=\"8\" fill=\"#FCEEAC\" text-anchor=\"middle\" opacity=\"0.8\">Your bridge to divine wisdom</text>");
 
             // Add stars
             GenerateStars(sb, width, height, 20);
@@ -203,23 +203,22 @@ namespace Acme.Wpf.Services
 
             // Title
             sb.AppendLine($"<text x=\"{width/2}\" y=\"{headerHeight/2 + 8}\" font-family=\"Playfair Display, serif\" " +
-                         $"font-size=\"24\" fill=\"#2A1B35\" text-anchor=\"middle\">{title}</text>");
+                         $"font-size=\"18\" fill=\"#2A1B35\" text-anchor=\"middle\">{title}</text>");
 
             // Date field (right)
             sb.AppendLine($"<text x=\"{width - margin - 100}\" y=\"{headerHeight/2 + 5}\" font-family=\"Lora, serif\" " +
-                         $"font-size=\"14\" fill=\"#888888\">Date: __________</text>");
+                         $"font-size=\"11\" fill=\"#888888\">Date: __________</text>");
 
-            // Header line
-            sb.AppendLine($"<line x1=\"{margin}\" y1=\"{headerHeight - 10}\" x2=\"{width - margin}\" y2=\"{headerHeight - 10}\" " +
-                         $"stroke=\"#4DD0E1\" stroke-width=\"1\"/>");
+            // Header line with decorative element
+            sb.Append(DecorativeElements.GenerateDecorativeLine(margin, headerHeight - 10, width - margin, "#4DD0E1", 1, true));
 
             // Prompt question
             double promptY = headerHeight + 50;
             if (!string.IsNullOrEmpty(promptQuestion))
             {
                 sb.AppendLine($"<text x=\"{margin + safeZone}\" y=\"{promptY}\" font-family=\"Lora, serif\" " +
-                             $"font-size=\"16\" font-style=\"italic\" fill=\"#4A2C5E\">{promptQuestion}</text>");
-                promptY += 30;
+                             $"font-size=\"12\" font-style=\"italic\" fill=\"#4A2C5E\">{promptQuestion}</text>");
+                promptY += 25;
             }
 
             // Writing lines
@@ -248,9 +247,9 @@ namespace Acme.Wpf.Services
             // Footer
             double footerY = height - margin / 2;
             sb.AppendLine($"<text x=\"{margin + safeZone}\" y=\"{footerY}\" font-family=\"Lora, serif\" " +
-                         $"font-size=\"10\" fill=\"#888888\">✨ AISoulGuide.com</text>");
+                         $"font-size=\"8\" fill=\"#888888\">✨ AISoulGuide.com</text>");
             sb.AppendLine($"<text x=\"{width - margin - safeZone}\" y=\"{footerY}\" font-family=\"Lora, serif\" " +
-                         $"font-size=\"10\" fill=\"#888888\" text-anchor=\"end\">Page {pageNumber}</text>");
+                         $"font-size=\"8\" fill=\"#888888\" text-anchor=\"end\">Page {pageNumber}</text>");
 
             sb.AppendLine("</svg>");
             return sb.ToString();

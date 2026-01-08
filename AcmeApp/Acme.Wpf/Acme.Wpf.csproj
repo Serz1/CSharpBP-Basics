@@ -61,10 +61,13 @@
     <Compile Include="Models\TemplateConfig.cs" />
     <Compile Include="Models\TemplateTypes.cs" />
     <Compile Include="Models\PlannerContent.cs" />
+    <Compile Include="Models\BrandElements.cs" />
+    <Compile Include="Models\DecorativeElements.cs" />
     <Compile Include="Services\SacredGeometryService.cs" />
     <Compile Include="Services\TemplateSvgGenerator.cs" />
     <Compile Include="Services\SpecializedTemplateGenerator.cs" />
     <Compile Include="Services\PlannerPageGenerator.cs" />
+    <Compile Include="Services\BrandedCardGenerator.cs" />
     <Compile Include="ViewModels\VendorDetailViewModel.cs" />
     <Compile Include="ViewModels\TemplateGeneratorViewModel.cs" />
     <Compile Include="Views\VendorDetailView.xaml.cs">
