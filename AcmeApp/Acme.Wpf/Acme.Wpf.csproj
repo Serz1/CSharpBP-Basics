@@ -59,8 +59,10 @@
     <Compile Include="Models\SacredGeometry.cs" />
     <Compile Include="Models\ColorScheme.cs" />
     <Compile Include="Models\TemplateConfig.cs" />
+    <Compile Include="Models\TemplateTypes.cs" />
     <Compile Include="Services\SacredGeometryService.cs" />
     <Compile Include="Services\TemplateSvgGenerator.cs" />
+    <Compile Include="Services\SpecializedTemplateGenerator.cs" />
     <Compile Include="ViewModels\VendorDetailViewModel.cs" />
     <Compile Include="ViewModels\TemplateGeneratorViewModel.cs" />
     <Compile Include="Views\VendorDetailView.xaml.cs">

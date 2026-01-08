@@ -16,7 +16,15 @@ namespace Acme.Wpf.Models
         /// <summary>Square format for social media (1080 x 1080 px)</summary>
         Square,
         /// <summary>Instagram Story format (1080 x 1920 px)</summary>
-        InstagramStory
+        InstagramStory,
+        /// <summary>Card format (2.5 x 3.5 inches - poker/tarot size)</summary>
+        CardStandard,
+        /// <summary>Card format (3.5 x 5 inches - larger oracle size)</summary>
+        CardLarge,
+        /// <summary>Book page spread (two pages side by side)</summary>
+        BookSpread,
+        /// <summary>Cover page format</summary>
+        CoverPage
     }
 
     /// <summary>
@@ -81,6 +89,38 @@ namespace Acme.Wpf.Models
                     Height = 1920,
                     Unit = "px",
                     DisplayName = "Instagram Story (1080 x 1920)"
+                },
+                new PageFormat
+                {
+                    Type = PageFormatType.CardStandard,
+                    Width = 750,
+                    Height = 1050,
+                    Unit = "px",
+                    DisplayName = "Card Standard (2.5\" x 3.5\")"
+                },
+                new PageFormat
+                {
+                    Type = PageFormatType.CardLarge,
+                    Width = 1050,
+                    Height = 1500,
+                    Unit = "px",
+                    DisplayName = "Card Large (3.5\" x 5\")"
+                },
+                new PageFormat
+                {
+                    Type = PageFormatType.BookSpread,
+                    Width = 1588,
+                    Height = 794,
+                    Unit = "px",
+                    DisplayName = "Book Spread (Two A5 pages)"
+                },
+                new PageFormat
+                {
+                    Type = PageFormatType.CoverPage,
+                    Width = 816,
+                    Height = 1056,
+                    Unit = "px",
+                    DisplayName = "Cover Page (8.5\" x 11\")"
                 }
             };
         }

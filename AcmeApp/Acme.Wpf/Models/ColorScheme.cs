@@ -76,6 +76,36 @@ namespace Acme.Wpf.Models
                     BackgroundGradientStart = "#0a3d26",
                     BackgroundGradientEnd = "#1e5f3e",
                     FrameColor = "#FFD700"
+                },
+                new ColorScheme
+                {
+                    Name = "Shadow Awakening",
+                    PrimaryColor = "#FFD700",
+                    SecondaryColor = "#FCEEAC",
+                    AccentColor = "#8B5CF6",
+                    BackgroundGradientStart = "#120A2A",
+                    BackgroundGradientEnd = "#1E0E3E",
+                    FrameColor = "#FFD700"
+                },
+                new ColorScheme
+                {
+                    Name = "Luminous Harmony",
+                    PrimaryColor = "#E6B8FF",
+                    SecondaryColor = "#D4AF37",
+                    AccentColor = "#FCEEAC",
+                    BackgroundGradientStart = "#3E2B4D",
+                    BackgroundGradientEnd = "#5A3D6F",
+                    FrameColor = "#D4AF37"
+                },
+                new ColorScheme
+                {
+                    Name = "Angel Numbers Deep",
+                    PrimaryColor = "#FFD700",
+                    SecondaryColor = "#9B59B6",
+                    AccentColor = "#FFFFFF",
+                    BackgroundGradientStart = "#2C0735",
+                    BackgroundGradientEnd = "#4A0E4E",
+                    FrameColor = "#FFD700"
                 }
             };
         }
