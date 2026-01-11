@@ -29,7 +29,7 @@ namespace Acme.Wpf.Services
         public int ExportAllAngelCards(string outputFolder, ColorScheme scheme)
         {
             int count = 0;
-            var numbers = AngelNumberContent.GetPredefinedNumbers();
+            var numbers = AngelNumberContent.GetNumbers(); // Использует импортированный контент!
             var cardFormat = PageFormat.GetFormat(PageFormatType.CardStandard);
 
             foreach (var number in numbers)
@@ -60,7 +60,7 @@ namespace Acme.Wpf.Services
         public int ExportAllBookSpreads(string outputFolder, ColorScheme scheme)
         {
             int count = 0;
-            var numbers = AngelNumberContent.GetPredefinedNumbers();
+            var numbers = AngelNumberContent.GetNumbers(); // Использует импортированный контент!
             var spreadFormat = PageFormat.GetFormat(PageFormatType.BookSpread);
 
             foreach (var number in numbers)
@@ -104,7 +104,7 @@ namespace Acme.Wpf.Services
         public int ExportAllPlannerMonths(string outputFolder, ColorScheme scheme)
         {
             int count = 0;
-            var months = PlannerContent.GetSpiritualAwakeningMonths();
+            var months = PlannerContent.GetMonths(); // Использует импортированный контент!
             var pageFormat = PageFormat.GetFormat(PageFormatType.USLetter);
 
             foreach (var month in months)

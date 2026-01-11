@@ -67,6 +67,23 @@ namespace Acme.Wpf.Models
             PracticalSteps = new string[0];
         }
 
+        /// <summary>
+        /// Получить Angel Numbers из импорта (если есть) или дефолтные
+        /// </summary>
+        public static AngelNumberContent[] GetNumbers()
+        {
+            try
+            {
+                var importer = new Services.ContentImporter();
+                return importer.LoadAngelNumbers();
+            }
+            catch
+            {
+                // Если ошибка импорта - вернуть дефолтные
+                return GetPredefinedNumbers();
+            }
+        }
+
         public static AngelNumberContent[] GetPredefinedNumbers()
         {
             return new[]

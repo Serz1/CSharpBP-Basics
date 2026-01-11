@@ -18,6 +18,22 @@ namespace Acme.Wpf.Models
             WeeklyQuestions = new string[7];
         }
 
+        /// <summary>
+        /// Получить месяцы планнера из импорта (если есть) или дефолтные
+        /// </summary>
+        public static PlannerContent[] GetMonths()
+        {
+            try
+            {
+                var importer = new Services.ContentImporter();
+                return importer.LoadPlannerMonths();
+            }
+            catch
+            {
+                return GetSpiritualAwakeningMonths();
+            }
+        }
+
         public static PlannerContent[] GetSpiritualAwakeningMonths()
         {
             return new[]

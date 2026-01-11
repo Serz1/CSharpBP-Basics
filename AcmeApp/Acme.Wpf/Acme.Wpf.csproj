@@ -70,6 +70,7 @@
     <Compile Include="Services\PlannerPageGenerator.cs" />
     <Compile Include="Services\BrandedCardGenerator.cs" />
     <Compile Include="Services\BatchExportService.cs" />
+    <Compile Include="Services\ContentImporter.cs" />
     <Compile Include="ViewModels\VendorDetailViewModel.cs" />
     <Compile Include="ViewModels\TemplateGeneratorViewModel.cs" />
     <Compile Include="Views\VendorDetailView.xaml.cs">

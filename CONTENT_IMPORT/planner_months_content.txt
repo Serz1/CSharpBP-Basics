@@ -1,0 +1,75 @@
+===========================================
+КОНТЕНТ ДЛЯ ПЛАННЕРА: 12 МЕСЯЦЕВ
+===========================================
+
+Инструкция:
+1. Откройте этот файл Блокнотом
+2. Вставьте ваши темы для каждого месяца
+3. Сохраните (Ctrl+S)
+4. Программа автоматически прочитает!
+
+===========================================
+ФОРМАТ:
+===========================================
+
+[MONTH:JANUARY]
+Theme: INTENTION
+Quote: What foundation are you building this year?
+NewMoon: January 29
+FullMoon: January 13 (Wolf Moon)
+Question1: What are you grateful for AND what's challenging you today?
+Question2: Where are you forcing instead of flowing?
+Question3: What truth are you avoiding?
+Question4: How did you honor your energy today?
+Question5: What synchronicity appeared?
+Question6: What did you release this week?
+Question7: What's ready to be born?
+[END]
+
+[MONTH:FEBRUARY]
+Theme: [Ваша тема]
+Quote: [Ваша цитата]
+NewMoon: [Дата]
+FullMoon: [Дата и название луны]
+Question1: [Вопрос 1]
+Question2: [Вопрос 2]
+Question3: [Вопрос 3]
+Question4: [Вопрос 4]
+Question5: [Вопрос 5]
+Question6: [Вопрос 6]
+Question7: [Вопрос 7]
+[END]
+
+[MONTH:MARCH]
+Theme: [Тема]
+Quote: [Цитата]
+NewMoon: [Дата]
+FullMoon: [Дата]
+Question1: [Вопрос]
+Question2: [Вопрос]
+Question3: [Вопрос]
+Question4: [Вопрос]
+Question5: [Вопрос]
+Question6: [Вопрос]
+Question7: [Вопрос]
+[END]
+
+[Скопируйте для остальных месяцев: APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER]
+
+===========================================
+ПРИМЕР:
+===========================================
+
+[MONTH:MARCH]
+Theme: ПРОБУЖДЕНИЕ
+Quote: Какая часть тебя готова проснуться?
+NewMoon: 29 марта
+FullMoon: 14 марта (Червячная луна)
+Question1: Какой старый паттерн растворяется?
+Question2: Где ты оживаешь?
+Question3: Какая правда только что открылась?
+Question4: Как твоё пробуждение ощущается в теле?
+Question5: Что больше не подходит новому тебе?
+Question6: Какая перспектива изменилась на этой неделе?
+Question7: Кем ты становишься?
+[END]
